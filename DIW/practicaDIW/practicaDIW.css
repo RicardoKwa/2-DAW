@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital@1&display=swap');
+
+*{
+  box-sizing: border-box;
+  margin: 0; 
+  padding:0;
+}
+
+  html{
+    height: 100%;
+  }
+
+  body{
+    min-height: 100%;
+    font-family: sans-serif;
+    font-size: 1.4rem;
+  }
+
+  .grid-container{
+    display: grid;
+    grid-gap: 0px;
+    grid-template-areas: /*Se definen 3 áreas con grid*/
+    "header"
+    "menu"
+    "main"
+    "footer";
+    grid-template:  /*Se definen los altos de las 3 áreas*/
+    "header" 250px
+    "menu" 40px
+    "main" auto
+    "footer" 40px;
+  }
+  
+  .header {     
+    grid-area: header;/*Se asignan las áreas*/
+    background-color: #D2AA87;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .menu{
+    grid-area: menu;
+    background-color: #D2AA87;
+    padding: 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+   }
+
+  .main {
+    grid-area: main;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .footer{
+    grid-area: footer;
+    background-color:#D2AA87;
+    display:flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+   .logo img{
+    width: 1000px;
+    height: 230px;
+   } 
+    
+   a {
+    outline: none;
+    text-decoration: none;
+    padding: 2px 1px 0;
+    color: black;
+   }
+   li {
+     display:inline;
+     padding-left:20px;
+     padding-right:20px;
+     font-size: 16pt
+  }
+  
+  .main > table{
+    margin-left:200px;
+  }
+
+  td{
+    background-color: #D2AA87;
+    height: 45px;/*fijamos un tamaño para que se vean las celdas*/
+    width: 45px;
+  }
+  td > div{
+    visibility: hidden;
+    width: 450px; 
+    height: 250px;
+    padding: 15px;
+    position:absolute; /*posicionamos la información fuera de la tabla*/
+    left: 70%;
+    top:60%;
+    transform: translate(-50%, -50%);
+    background-color: #D2AA87;
+    border-radius: 20px;
+  }
+  td div > h2{
+    font-family: 'Crimson Text', serif;
+    border-bottom: 2px solid #735B47;
+  }
+
+  .reservado{
+    background-color: #E74C3C;
+  }
+
+  .reservado:hover > div{
+    visibility: visible;
+
+  }
+
+  .datos-reserva{
+    padding: 30px;
+  }
+  

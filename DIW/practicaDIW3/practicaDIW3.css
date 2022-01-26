@@ -1,0 +1,121 @@
+
+*{
+    box-sizing: border-box;
+    margin: 0; 
+    padding:0;
+}
+html{
+    height: 100%;
+}
+body{
+    min-height: 100%;
+    font-size: 1.2rem;
+}
+
+/*////////////////////////////////////*/
+
+#contenido{
+    padding: 30px;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+.panel {
+    background-color: #e9ebf1af ;
+    border-radius: 10px;
+    margin: 5px;
+
+    animation-duration: 1s;
+    animation-name: cargaPaneles;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+}
+
+@keyframes cargaPaneles { /*La primera animacion al cargar el html*/
+   from {
+    opacity: 0;
+    margin-right:100%;
+    width:0%;
+    font-size: 0.1em;
+   }to {
+    opacity: 1;
+    margin-right:0%;
+    width:100%;
+    font-size: 1em;
+   }
+}
+p{  
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+span{  
+    padding: 15px;
+}
+.primera{
+   display: inline-block;/*Para que funcione la animacion de rotación utilizo inline-block*/
+   font-size: 3.5em;
+   margin-right: 5px; 
+}
+p:hover .primera{
+   animation-name: rotacion;
+   animation-duration: 5s;
+   animation-iteration-count: infinite;
+   animation-timing-function: linear;
+}
+@keyframes rotacion{ /*Animacion de rotacion de la primera letra*/
+    from {
+    transform: rotate(0deg)
+    } to {
+    transform: rotate(360deg)
+    }
+}
+
+/*////////////////////////////////////*/
+
+@media (max-width:400px){ /*Para pantallas pequeñas*/
+
+#contenido{
+    padding: 5px;
+    flex-flow:row nowrap;
+}
+.primera ~ span{
+    display: none;  
+}
+.primera:hover ~ span{
+    display: block;      
+    font-size: 0.5em;
+
+
+    animation-name: opacidad;  /*Esta animación no se pide, la he añadido yo*/
+    animation-duration: 4s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+}
+
+@keyframes opacidad{
+ from {
+    opacity: 0;
+ } to {
+    opacity: 1;
+ }
+}
+p{
+    display: block; /*quito el flex e los parrafos*/
+}
+span{
+     padding: 3px; /*reduzco el padding de los span*/
+}
+}
+
+/*////////////////////////////////////*/
+
+@media (max-width:1000px) and (min-width:400px){ /*Para pantalla minimizada, ya que rotaba mal la letra con el nowrap*/
+    p{
+        flex-wrap: wrap;
+    }
+}

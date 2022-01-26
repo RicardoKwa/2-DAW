@@ -1,0 +1,156 @@
+*{
+    box-sizing: border-box;
+    margin: 0; 
+    padding:0;
+  }
+
+  html{
+    height: 100%;
+  }
+/*---------BODY------*/
+
+  body{
+    min-height: 100%;
+    font-family: sans-serif;
+    font-size: 1.1rem;
+  }
+
+#flex-container-body{
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+/*--------CABECERA--------*/
+  .cabecera{
+      height: auto;
+      background-color: #384BAA ;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+      align-items: center;
+      font-family:Verdana;
+      color: #E5E6EE ;
+      border: 1px solid black;
+  }
+  .cabecera > * {
+  	margin-right: 80px; 
+  }
+
+  #logo{
+  	margin-right: 20px;
+  	width: 200px; height: 140px;
+  }
+
+/*--------MAIN--------*/
+
+  .flex-container-main{
+      flex-grow: 1;/*Para que ocuper el restante que deja la cabecera*/
+      background-color: #D6D8DF;
+      display: flex;
+      flex-flow: column nowrap;
+      padding: 20px;
+      justify-content: center;
+  }
+
+/*--------INTERIOR DE MAIN--------*/
+
+  .flex-container-main > *{/*2 hijos -> flex-row*/
+      padding: 30px;
+      margin: 15px 0px 15px 0px;
+      display: flex;
+      flex-flow: row wrap;
+      background-color: #C3C5D0 ;
+      justify-content: space-around;
+      align-items: center;
+  }
+
+.flex-row > *{ /*cada flex-row tiene 3 hijos, 3 flex-item*/
+     
+      flex-basis: 300px; /*Cada flex-item tendrá 300px de ancho*/
+      display: flex;
+      flex-flow: column nowrap;
+      border-radius: 5px;
+      overflow: hidden;
+      color: #E5E6EE ;
+}
+
+
+/*--------Hijos de cada flex-item-------> .nombre y .datos*/
+
+.nombre{
+  background-color: black;
+  padding: 5px;
+}
+
+.datos{
+  background-color: #384BAA;
+  display: flex;
+  flex-flow: row nowrap;
+  flex-grow: 1; /*Para que ocupe todo el espacio restante*/
+  padding: 10px;
+}
+
+
+/*-------Hijos de .datos-------> son lista-datos foto y biografía*/
+
+.lista-datos{
+  flex-grow: 2;
+}
+
+.foto{
+ flex-grow: 1;
+}
+
+.biografia{
+  display: none;
+  padding: 10px;
+  
+}
+
+li{
+  list-style-type: none;
+  margin-top: 3px;
+}
+
+/*--------------HOVER----------------*/
+
+.flex-item:hover {
+  position: absolute;
+  top: 25%;
+  left: 10%;
+  height: 65%;
+  width: 80%;
+  overflow: scroll;
+  font-size: 1.2rem;
+}
+
+.flex-item:hover .foto{
+ display: none;
+}
+
+.flex-item:hover .biografia{
+  display: block;
+ }
+
+ .flex-item:hover .datos{
+   flex-flow: column nowrap;
+ }
+
+.flex-item:hover ul{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 10px;
+  border: 3px solid black;
+}
+
+.flex-item:hover li{
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+
+/*tamaño de imagenes*/
+ img{
+  width: 100px; height: 110px;
+}

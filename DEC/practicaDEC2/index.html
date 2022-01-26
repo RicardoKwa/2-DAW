@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>RICARDO KWAPISZ PAREJO , PRÁCTICA 2 DEC</title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="practicaDEC2.css" />
+</head>
+
+<body class="grid-container">
+
+    <section id="panelIzquierdo">
+        <h1>Agenda de Tareas</h1>
+        <div id="formulario">
+            <form id="addTarea">
+                <div>
+                    <!-- encapsular los elementos del formulario en divs para que salgan en columna hacia abajo y no en paralelo-->
+                    <input type="text" name="nombre" size="60" id = "nombreTarea" placeholder="Nombre de la tarea" />
+                </div>
+                <div>
+                    <textarea id="descripcion" placeholder="Descripción ..."></textarea>
+                </div>
+                <div id="boton">
+                    <input type="button" name="nueva_t" id="nueva_t" value="Crear" />
+                </div>
+            </form>
+        </div>
+
+        <div id="zonaLista">
+            <ul id="lista">
+            </ul>
+        </div>
+    </section>
+
+    <section id="panelDerecho">
+        <div id="zonaInfo">
+        </div>
+    </section>
+
+
+<script src="practicaDEC2.js"></script>
+
+</body>
+
+
+</html>
+
+
+

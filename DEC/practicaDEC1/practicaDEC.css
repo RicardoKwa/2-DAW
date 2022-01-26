@@ -1,0 +1,53 @@
+    /*RICARDO KWAPISZ PAREJO*/
+    
+    *{
+    box-sizing: border-box;
+    margin: 0; 
+    padding:0;
+    }
+  
+    html{
+      height: 100%;
+    }
+  
+    body{
+      min-height: 100%;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1.3rem;
+    }
+
+    .grid-container{
+        display: grid;
+        grid-gap: 0px;
+        grid-template-areas:
+        "header"
+        "main";
+        grid-template: 
+        "header" 100px
+        "main" auto ;
+    }
+    
+    .grid-container > *{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+    }
+    .header {     
+        grid-area: header;
+        background-color: #D2AA87;
+        font-family: 'Courier New', Courier, monospace;
+    }
+
+    .main {
+        grid-area: main;
+    }
+
+      main > div{
+         margin: auto;
+    }
+    
+    td {
+      padding: 2px;
+    }
+      
